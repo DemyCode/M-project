@@ -11,7 +11,7 @@ int main(void)
 		SDL_WINDOWPOS_UNDEFINED,
 		SDL_WINDOWPOS_UNDEFINED,
 		1920,
-		1080,
+		1200,
 		SDL_WINDOW_BORDERLESS);
 
 	if (!window) {
@@ -42,29 +42,29 @@ int main(void)
 
 	for (Uint8 j = 0; j < 1; j++)
 	{
-		for (Uint8 i = 0; i < 0xFE; i += 2)
+		for (Uint8 i = 0; i < 0xFE; ++i)
 		{
 			SDL_FillRect(screenSurface, NULL, SDL_MapRGB(screenSurface->format, 0x00, (0xFF - i), i));
 			SDL_UpdateWindowSurface(window);
 		}
-		for (Uint8 i = 0; i < 0xFE; i += 2)
+		for (Uint8 i = 0; i < 0xFE; ++i)
 		{
 			SDL_FillRect(screenSurface, NULL, SDL_MapRGB(screenSurface->format, i,i, (0xFF - i)));
 			SDL_UpdateWindowSurface(window);
 		}
-		for (Uint8 i = 0; i < 0xFE; i += 2)
+		for (Uint8 i = 0; i < 0xFE; ++i)
 		{
-			SDL_FillRect(screenSurface, NULL, SDL_MapRGB(screenSurface->format, i, (0xFF - i), i));
+			SDL_FillRect(screenSurface, NULL, SDL_MapRGB(screenSurface->format, 0xFF, (0xFF - i), i));
 			SDL_UpdateWindowSurface(window);
 		}
-		for (Uint8 i = 0; i < 0xFE; i += 2)
+		for (Uint8 i = 0; i < 0xFE; ++i)
 		{
 			SDL_FillRect(screenSurface, NULL, SDL_MapRGB(screenSurface->format, (0xFF - i), i,0xFF));
 			SDL_UpdateWindowSurface(window);
 		}
-		for (Uint8 i = 0; i < 0xFE; i += 2)
+		for (Uint8 i = 0; i < 0xFE; ++i)
 		{
-			SDL_FillRect(screenSurface, NULL, SDL_MapRGB(screenSurface->format, 0, 0xFF, (0xFF - i)));
+			SDL_FillRect(screenSurface, NULL, SDL_MapRGB(screenSurface->format, 0x00, 0xFF, (0xFF - i)));
 			SDL_UpdateWindowSurface(window);
 		}
 	}
