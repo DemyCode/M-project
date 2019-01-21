@@ -1,9 +1,10 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <SDL.h>
+#include <SDL2/SDL.h>
 
-int main(int argc, char **argv) {
-	
+int main(void)
+{
+
 	SDL_Init(SDL_INIT_EVERYTHING);
 
 	SDL_Window *window = SDL_CreateWindow("Window test",
@@ -12,12 +13,12 @@ int main(int argc, char **argv) {
 		1920,
 		1080,
 		SDL_WINDOW_BORDERLESS);
-	
+
 	if (!window) {
 		printf("Window couldn't open: %s", SDL_GetError());
 		return 1;
 	}
-	
+
 	SDL_Surface *screenSurface = SDL_GetWindowSurface(window);
 	/*
 	TTF_Font* ROK = TTF_OpenFont("Rise of Kingdom.ttf", 24);
@@ -38,7 +39,7 @@ int main(int argc, char **argv) {
 	SDL_Delay(100000);
 
 	*/
-	
+
 	for (Uint8 j = 0; j < 1; j++)
 	{
 		for (Uint8 i = 0; i < 0xFE; i += 2)
@@ -67,10 +68,10 @@ int main(int argc, char **argv) {
 			SDL_UpdateWindowSurface(window);
 		}
 	}
-	
+
 	SDL_DestroyWindow(window);
 
 	SDL_Quit();
-	
+
 	return 0;
 }
